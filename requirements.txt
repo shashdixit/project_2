@@ -1,0 +1,6 @@
+flask
+pandas
+werkzeug
+gunicorn
+requests
+urllib3
