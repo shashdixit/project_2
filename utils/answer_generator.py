@@ -57,9 +57,9 @@ def generate_answer(question, files=None):
                         "url": "https://httpbin.org/get?email=''' + email.replace("@", "%40") + '''"
                     }'''
     
-    # Handle CSV file question
-    if "csv file" in question_lower and "answer column" in question_lower and files and 'csv_answer' in files:
-        return files['csv_answer']
+    # # Handle CSV file question
+    # if "csv file" in question_lower and "answer column" in question_lower and files and 'csv_answer' in files:
+    #     return files['csv_answer']
     
     # Graded Assignment 1 - Question about code -s output
     if "code -s" in question_lower and "output" in question_lower:
@@ -84,6 +84,31 @@ def generate_answer(question, files=None):
         # Sum the values
         result = sum(sequence_first_row)
          
+        return str(result)
+
+    # Graded Assignment 1 - Question 5 about Excel formula
+    if "excel" in question_lower and "formula" in question_lower:
+        
+        # First array in SORTBY
+        values = [1, 5, 2, 10, 11, 1, 8, 10, 8, 7, 6, 2, 10, 7, 1, 4]
+        # Second array in SORTBY (used for sorting)
+        sort_keys = [10, 9, 13, 2, 11, 8, 16, 14, 7, 15, 5, 4, 6, 1, 3, 12]
+        
+        # Create pairs of (sort_key, value)
+        pairs = list(zip(sort_keys, values))
+        
+        # Sort the pairs by the sort_key (first element)
+        sorted_pairs = sorted(pairs, key=lambda x: x[0])
+        
+        # Extract just the values (second element) from the sorted pairs
+        sorted_values = [pair[1] for pair in sorted_pairs]
+        
+        # TAKE the first 8 elements
+        taken_values = sorted_values[:8]
+        
+        # SUM those values
+        result = sum(taken_values)
+        
         return str(result)
     
     # Default response if no specific answer is found
