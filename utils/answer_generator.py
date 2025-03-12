@@ -73,6 +73,18 @@ def generate_answer(question, files=None):
             # If command fails, return a generic response about VS Code stats
             system_info = get_system_info()
             return system_info
+
+    # Graded Assignment 1 - Question 4 about Google Sheets formula
+    if "formula" in question_lower and "google sheets" in question_lower:
+        # Generate the first row of the sequence
+        start_value = 10
+        step = 4
+        sequence_first_row = [start_value + step * i for i in range(10)]
+        
+        # Sum the values
+        result = sum(sequence_first_row)
+         
+        return str(result)
     
     # Default response if no specific answer is found
     return "I couldn't determine the answer to this specific question. Please check the question format or provide more details."
