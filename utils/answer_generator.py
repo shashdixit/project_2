@@ -1,9 +1,13 @@
+# utils/answer_generator.py
 import re
 import subprocess
 import platform
 import requests
 import json
 import urllib3
+import os
+import tempfile
+import hashlib
 
 # Disable SSL warnings (only for development - not recommended for production)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
