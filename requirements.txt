@@ -1,6 +1,6 @@
 flask
-pandas
-werkzeug
-gunicorn
+python-dotenv
 requests
-urllib3
+pandas
+openpyxl
+pillow
